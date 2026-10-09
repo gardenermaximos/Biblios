@@ -1,0 +1,180 @@
+/* =========================================
+   CONFIGURAÇÕES GERAIS E CORES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fundo Verde Suave e Aconchegante */
+.pagina-login {
+    background-color: #eef3f0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Alerta de erro de login */
+.alerta-erro {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* =========================================
+   LIVROS FLUTUANTES NO FUNDO
+   ========================================= */
+.livro-fundo {
+    position: absolute;
+    font-size: 5rem;
+    animation: flutuar 6s ease-in-out infinite alternate;
+}
+
+.cor-verde { color: rgba(46, 90, 68, 0.12); }
+.cor-marrom { color: rgba(141, 91, 85, 0.12); }
+
+.livro-1 { top: 8%; left: 8%; font-size: 6rem; animation-delay: 0s; }
+.livro-2 { bottom: 10%; left: 10%; font-size: 5rem; animation-delay: 2s; }
+.livro-3 { top: 10%; right: 10%; font-size: 6.5rem; animation-delay: 1s; }
+.livro-4 { bottom: 8%; right: 12%; font-size: 5.5rem; animation-delay: 3s; }
+
+@keyframes flutuar {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-18px) rotate(4deg); }
+}
+
+/* =========================================
+   CARD BRANCO DE LOGIN
+   ========================================= */
+.card-login {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 440px;
+    padding: 35px 30px;
+    border-radius: 24px;
+    border: 2px solid #dbe5df;
+    box-shadow: 0 10px 25px rgba(46, 90, 68, 0.08);
+    text-align: center;
+    z-index: 10;
+}
+
+/* ESTILO DA LOGO EM IMAGEM (logo.png) */
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo-imagem {
+    max-width: 100%;
+    width: 160px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* =========================================
+   CAMPOS DE ENTRADA (LEITURA FACILITADA)
+   ========================================= */
+.campo-grupo {
+    text-align: left;
+    margin-bottom: 22px;
+}
+
+.campo-grupo label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2e5a44;
+    margin-bottom: 8px;
+}
+
+.icone-rotulo {
+    color: #8d5b55;
+    font-size: 1rem;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    border: 2px solid #c2d1c7;
+    border-radius: 12px;
+    padding: 4px 16px;
+    background-color: #fafcfb;
+    transition: all 0.2s ease;
+}
+
+.input-container:focus-within {
+    border-color: #8d5b55;
+    background-color: #ffffff;
+}
+
+.icone-olho {
+    color: #666666;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    color: #333333;
+    background: transparent;
+}
+
+/* =========================================
+   BOTÃO E LINK
+   ========================================= */
+.btn-entrar {
+    width: 100%;
+    background-color: #8d5b55;
+    color: #ffffff;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 1.15rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-entrar:hover {
+    background-color: #754843;
+}
+
+.link-esqueceu {
+    color: #2e5a44;
+    font-size: 0.95rem;
+    text-decoration: underline;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.link-esqueceu:hover {
+    color: #8d5b55;
+}
