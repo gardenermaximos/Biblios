@@ -1,136 +1,125 @@
-/* Configuracoes Basicas */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
+<?php
+// Inicia a sessão na primeira linha
+session_start();
 
-body {
-    background-color: #f4f5f7;
-    color: #333333;
+// Se o usuário NÃO estiver logado, redireciona para a página de login
+if (!isset($_SESSION['usuario_logado'])) {
+    header("Location: ../pagina_login1/login.php");
+    exit();
 }
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BibliOS - Dashboard</title>
 
-/* 1. Barra Superior */
-.topo-nav {
-    background-color: #8d5b55; /* Cor Terracota do Protótipo */
-    color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-}
+    <!-- Bibliotecas de Ícones (Font Awesome via CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
+    <!-- Nosso arquivo de estilos CSS -->
+<!-- Força o navegador a carregar sempre a versão mais recente do CSS -->
+    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
+</head>
+<body>
 
-.menu-icon {
-    font-size: 1.2rem;
-    cursor: pointer;
-}
+    <!-- Barra de Navegação Superior -->
+    <header class="topo-nav">
+        <div class="logo-area">
+            <i class="fa-solid fa-bars menu-icon"></i>
+            <span class="titulo-nav">DASHBOARD</span>
+        </div>
+        <div class="user-area">
+            <span class="escola-badge">Escola Aprender Mais</span>
+            <div class="avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+        </div>
+    </header>
 
-.user-area {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+    <!-- Conteúdo Principal -->
+    <main class="container">
 
-.escola-badge {
-    background-color: #ffffff;
-    color: #8d5b55;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: bold;
-}
+        <section class="boas-vindas">
+            <h2>Bem-vindo!</h2>
+            <p>Resumo do Sistema – Escola Aprender Mais</p>
+        </section>
 
-.avatar {
-    background-color: #ffffff;
-    color: #8d5b55;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-}
+        <!-- Grade com os 8 Cards do Figma -->
+        <div class="grid-dashboard">
 
-/* 2. Conteudo da Pagina */
-.container {
-    max-width: 1000px;
-    margin: 35px auto;
-    padding: 0 20px;
-}
+            <!-- --- PRIMEIRA FILEIRA (INDICADORES / CONSULTAS) --- -->
 
-.boas-vindas h2 {
-    font-size: 1.8rem;
-    color: #222222;
-    margin-bottom: 5px;
-}
+            <!-- Card 1: Leitores Ativos -->
+            <a href="../pagina_leitores3/leitores.php" class="card">
+                <div class="badge-card">LEITORES ATIVOS</div>
+                <div class="icone-box">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+            </a>
 
-.boas-vindas p {
-    color: #666666;
-    font-size: 0.95rem;
-    margin-bottom: 35px;
-}
+            <!-- Card 2: Livros Cadastrados -->
+            <a href="livros.php" class="card">
+                <div class="badge-card">LIVROS CADASTRADOS</div>
+                <div class="icone-box">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+            </a>
 
-/* 3. Grade dos Botões Grandes */
-.grid-dashboard {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-}
+            <!-- Card 3: Empréstimos Realizados -->
+            <a href="emprestimos.php" class="card">
+                <div class="badge-card">EMPRÉSTIMOS REALIZADOS</div>
+                <div class="icone-box">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+            </a>
 
-.card {
-    background-color: #8d5b55;
-    border-radius: 16px;
-    padding: 18px;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 180px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s ease;
-}
+            <!-- Card 4: Devoluções Atrasadas -->
+            <a href="devolucoes.php" class="card">
+                <div class="badge-card">DEVOLUÇÕES ATRASADAS</div>
+                <div class="icone-box">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                </div>
+            </a>
 
-.card:hover {
-    transform: translateY(-5px);
-}
+            <!-- --- SEGUNDA FILEIRA (AÇÕES / GERENCIAMENTO) --- -->
 
-/* Etiqueta Branca no topo do Card */
-.badge-card {
-    background-color: #ffffff;
-    color: #8d5b55;
-    font-weight: bold;
-    font-size: 0.75rem;
-    padding: 6px 14px;
-    border-radius: 20px;
-    text-align: center;
-    width: 100%;
-}
+            <!-- Card 5: Gerenciar Leitores -->
+            <a href="gerenciar_leitores.php" class="card">
+                <div class="badge-card">GERENCIAR LEITORES</div>
+                <div class="icone-box">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+            </a>
 
-/* Caixinha do Ícone no Meio do Card */
-.icone-box {
-    background-color: rgba(255, 255, 255, 0.25);
-    width: 85px;
-    height: 85px;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-}
+            <!-- Card 6: Catálogo de Livros -->
+            <a href="livros.php" class="card">
+                <div class="badge-card">CATÁLOGO DE LIVROS</div>
+                <div class="icone-box">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+            </a>
 
-/* Estilo do Ícone (Font Awesome) dentro da caixinha */
-.icone-box i {
-    font-size: 2.2rem;
-    color: #ffffff;
-}
+            <!-- Card 7: Novo Empréstimo -->
+            <a href="novo_emprestimo.php" class="card">
+                <div class="badge-card">NOVO EMPRÉSTIMO</div>
+                <div class="icone-box">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+            </a>
+
+            <!-- Card 8: Registrar Devolução -->
+            <a href="devolucoes.php" class="card">
+                <div class="badge-card">REGISTRAR DEVOLUÇÃO</div>
+                <div class="icone-box">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </div>
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
