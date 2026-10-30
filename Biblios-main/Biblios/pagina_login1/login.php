@@ -1,15 +1,15 @@
 <?php
-// Inicia a sessão para guardar que o utilizador está ligado
+// Inicia a sessão na primeira linha sem nenhum caractere ou espaço antes do <?php
 session_start();
 
 $mensagem_erro = "";
 
 // Verifica se o formulário foi enviado através do botão "ENTRAR"
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
-    // Pega nos dados digitados pelo utilizador
-    $usuario = $_POST['usuario'] ?? '';
-    $senha = $_POST['senha'] ?? '';
+    // Pega nos dados digitados e remove espaços acidentais nas pontas
+    $usuario = trim($_POST['usuario'] ?? '');
+    $senha = trim($_POST['senha'] ?? '');
 
     // E-mail e Senha definidos para o acesso
     $email_correto = "bibliotecario@escola.com";
@@ -17,12 +17,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validação
     if ($usuario === $email_correto && $senha === $senha_correta) {
-        // Guarda a sessão e sai da pasta pagina_login1 para entrar na pagina_inicial2
+        
+        // Define a variável global de sessão do usuário
         $_SESSION['usuario_logado'] = $usuario;
+        
+        // Força o PHP a gravar a sessão no disco IMEDIATAMENTE antes do redirecionamento
+        session_write_close();
+        
+        // Redireciona para o Dashboard
         header("Location: ../pagina_inicial2/index.php");
-        exit;
+        exit();
     } else {
-        // Se estiver errado, define a mensagem de erro
         $mensagem_erro = "E-mail ou senha incorretos! Tente novamente.";
     }
 }
@@ -38,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- Nosso CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
 </head>
 <body class="pagina-login">
 
@@ -56,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <img src="logo.png" alt="BibliOS - Sistema de Gerenciamento de Biblioteca" class="logo-imagem">
         </div>
 
-        <!-- MENSAGEM DE ERRO (Aparece apenas se errar a senha) -->
+        <!-- MENSAGEM DE ERRO -->
         <?php if (!empty($mensagem_erro)): ?>
             <div class="alerta-erro">
                 <i class="fa-solid fa-circle-exclamation"></i> <?php echo $mensagem_erro; ?>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Verifica se o usuário está logado, senão redireciona para a página de login
+// Verifica se o utilizador está autenticado
 if (!isset($_SESSION['usuario_logado'])) {
     header("Location: ../pagina_login1/login.php");
     exit();
@@ -33,20 +33,22 @@ if (!isset($_SESSION['usuario_logado'])) {
         </div>
 
         <div class="header-direita">
-            <button class="btn-adicionar">
+            <!-- Link para a tela de Cadastro em pagina_gerenciar_leitores7 -->
+            <a href="../pagina_gerenciar_leitores7/gerenciar_leitores.php" class="btn-adicionar">
                 <i class="fa-solid fa-plus"></i> Adicionar
-            </button>
+            </a>
             <span class="escola-badge">Escola Aprender Mais</span>
-            <div class="avatar">
+            <a href="../pagina_login1/logout.php" class="avatar" title="Clique para sair do sistema">
                 <i class="fa-solid fa-user"></i>
-            </div>
+            </a>
         </div>
     </header>
 
     <!-- Abas de Navegação (LISTA / CADASTRO) -->
     <div class="container-abas">
-        <button class="aba-btn aba-ativa">LISTA</button>
-        <button class="aba-btn">CADASTRO</button>
+        <a href="leitores.php" class="aba-btn aba-ativa">LISTA</a>
+        <!-- Clique em CADASTRO navega para a pasta do cadastro -->
+        <a href="../pagina_gerenciar_leitores7/gerenciar_leitores.php" class="aba-btn">CADASTRO</a>
     </div>
 
     <hr class="linha-divisoria">

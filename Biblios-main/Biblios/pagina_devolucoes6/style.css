@@ -11,8 +11,8 @@ body {
     color: #333333;
 }
 
-/* Header Leitores */
-.header-leitores {
+/* Header Devoluções Atrasadas */
+.header-atrasos {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,20 +55,6 @@ body {
     gap: 15px;
 }
 
-.btn-adicionar {
-    background-color: #8d5b55;
-    color: #ffffff;
-    border: none;
-    padding: 8px 18px;
-    border-radius: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.9rem;
-}
-
 .escola-badge {
     background-color: #eef3f0;
     color: #8d5b55;
@@ -79,44 +65,41 @@ body {
 }
 
 .avatar {
-    background-color: #eef3f0;
+    background-color: #ffffff;
     color: #8d5b55;
-    width: 35px;
-    height: 35px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.9rem;
-}
-
-/* Abas LISTA e CADASTRO */
-.container-abas {
-    padding: 0 40px;
-    display: flex;
-    gap: 10px;
-}
-
-.aba-btn {
-    border: none;
-    padding: 8px 28px;
-    border-radius: 14px;
-    font-weight: bold;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
+    text-decoration: none; /* Remove o sublinhado do link */
     cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.avatar:hover {
     background-color: #e8dad7;
-    color: #8d5b55;
+    transform: scale(1.05);
 }
 
-.aba-ativa {
-    background-color: #8d5b55;
-    color: #ffffff;
+/* Banner de Alerta Vermelho */
+.banner-alerta {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border-top: 1px solid #fecaca;
+    border-bottom: 1px solid #fecaca;
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.88rem;
+    font-weight: bold;
 }
 
-.linha-divisoria {
-    border: none;
-    border-bottom: 1px solid #e2e8f0;
-    margin-top: 10px;
+.banner-alerta i {
+    font-size: 1.1rem;
 }
 
 /* Conteúdo Principal */
@@ -130,7 +113,7 @@ body {
 .barra-ferramentas {
     display: flex;
     gap: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .campo-busca {
@@ -138,10 +121,10 @@ body {
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 20px;
-    padding: 10px 18px;
+    padding: 12px 20px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     color: #888888;
 }
 
@@ -157,26 +140,27 @@ body {
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 20px;
-    padding: 10px 20px;
+    padding: 10px 22px;
     font-weight: bold;
     color: #2e5a44;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 8px;
+    font-size: 0.9rem;
 }
 
-/* Lista de Cartões dos Leitores */
-.lista-leitores {
+/* Lista de Cartões de Atraso */
+.lista-atrasos {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
 }
 
-.cartao-leitor {
+.cartao-atraso {
     background-color: #ffffff;
     border-radius: 16px;
-    padding: 14px 22px;
+    padding: 16px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -184,80 +168,80 @@ body {
     border: 1px solid #f0f0f0;
 }
 
-.leitor-info {
+.livro-info {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 18px;
 }
 
-.avatar-foto {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background-color: #eef3f0;
-    color: #2e5a44;
+/* Quadrado da Capa */
+.capa-box {
+    width: 46px;
+    height: 58px;
+    border-radius: 8px;
+    background-color: #8d5b55;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
 }
 
-.leitor-detalhes {
+.livro-detalhes {
     display: flex;
     flex-direction: column;
+    gap: 2px;
 }
 
-.leitor-detalhes strong {
-    font-size: 1rem;
+.livro-detalhes strong {
+    font-size: 1.05rem;
     color: #222222;
 }
 
-.leitor-detalhes span {
-    font-size: 0.85rem;
-    color: #777777;
-}
-
-.leitor-status {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.badge-tipo {
-    padding: 4px 14px;
-    border-radius: 12px;
+.livro-detalhes .isbn {
     font-size: 0.8rem;
-    font-weight: bold;
+    color: #888888;
+    margin-bottom: 2px;
 }
 
-.badge-aluno {
-    background-color: #e0e7ff;
-    color: #4338ca;
-}
-
-.badge-professor {
-    background-color: #fef3c7;
-    color: #b45309;
-}
-
-.status-indicador {
-    font-size: 0.85rem;
-    font-weight: bold;
-    color: #444444;
+.info-linha {
+    font-size: 0.82rem;
+    color: #666666;
     display: flex;
     align-items: center;
     gap: 6px;
 }
 
-.ponto-verde {
-    color: #10b981;
-    font-size: 0.5rem;
+.info-linha strong {
+    font-size: 0.82rem;
+    color: #333333;
+}
+
+.separador {
+    color: #aaaaaa;
+}
+
+.atraso-status {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Badge Alerta de Dias em Atraso */
+.badge-atraso {
+    background-color: #fee2e2;
+    color: #ef4444;
+    padding: 6px 18px;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-weight: bold;
 }
 
 .menu-opcoes {
     color: #888888;
     cursor: pointer;
     font-size: 1.1rem;
+    margin-left: 10px;
 }
 
 /* Paginação */
@@ -265,14 +249,14 @@ body {
     display: flex;
     justify-content: center;
     gap: 8px;
-    margin-top: 30px;
+    margin-top: 35px;
 }
 
 .btn-pag {
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     border-radius: 8px;
     font-weight: bold;
     color: #555555;

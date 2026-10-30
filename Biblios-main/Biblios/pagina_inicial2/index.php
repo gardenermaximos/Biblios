@@ -2,7 +2,7 @@
 // Inicia a sessão na primeira linha
 session_start();
 
-// Se o usuário NÃO estiver logado, redireciona para a página de login
+// Se o utilizador NÃO estiver autenticado, redireciona para a página de login
 if (!isset($_SESSION['usuario_logado'])) {
     header("Location: ../pagina_login1/login.php");
     exit();
@@ -18,8 +18,7 @@ if (!isset($_SESSION['usuario_logado'])) {
     <!-- Bibliotecas de Ícones (Font Awesome via CDN) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Nosso arquivo de estilos CSS -->
-<!-- Força o navegador a carregar sempre a versão mais recente do CSS -->
+    <!-- Força a atualização do CSS via versão dinânica -->
     <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
 </head>
 <body>
@@ -32,9 +31,9 @@ if (!isset($_SESSION['usuario_logado'])) {
         </div>
         <div class="user-area">
             <span class="escola-badge">Escola Aprender Mais</span>
-            <div class="avatar">
+            <a href="../pagina_login1/logout.php" class="avatar" title="Clique para sair do sistema">
                 <i class="fa-solid fa-user"></i>
-            </div>
+            </a>
         </div>
     </header>
 
@@ -46,10 +45,8 @@ if (!isset($_SESSION['usuario_logado'])) {
             <p>Resumo do Sistema – Escola Aprender Mais</p>
         </section>
 
-        <!-- Grade com os 8 Cards do Figma -->
+        <!-- Grade com os 8 Cards idênticos ao Figma -->
         <div class="grid-dashboard">
-
-            <!-- --- PRIMEIRA FILEIRA (INDICADORES / CONSULTAS) --- -->
 
             <!-- Card 1: Leitores Ativos -->
             <a href="../pagina_leitores3/leitores.php" class="card">
@@ -59,50 +56,48 @@ if (!isset($_SESSION['usuario_logado'])) {
                 </div>
             </a>
 
-            <!-- Card 2: Livros Cadastrados -->
-            <a href="livros.php" class="card">
+            <!-- Card 2: LIVROS CADASTRADOS -->
+            <a href="../pagina_livros4/livros_cadastrados.php" class="card">
                 <div class="badge-card">LIVROS CADASTRADOS</div>
                 <div class="icone-box">
-                    <i class="fa-solid fa-book"></i>
+                   <i class="fa-solid fa-book"></i>
                 </div>
             </a>
 
-            <!-- Card 3: Empréstimos Realizados -->
-            <a href="emprestimos.php" class="card">
+            <!-- Card 3: EMPRÉSTIMOS REALIZADOS -->
+            <a href="../pagina_emprestimos5/emprestimos.php" class="card">
                 <div class="badge-card">EMPRÉSTIMOS REALIZADOS</div>
                 <div class="icone-box">
                     <i class="fa-solid fa-handshake"></i>
                 </div>
             </a>
 
-            <!-- Card 4: Devoluções Atrasadas -->
-            <a href="devolucoes.php" class="card">
+            <!-- Card 4: DEVOLUÇÕES ATRASADAS -->
+            <a href="../pagina_devolucoes6/devolucoes_atrasadas.php" class="card">
                 <div class="badge-card">DEVOLUÇÕES ATRASADAS</div>
                 <div class="icone-box">
                     <i class="fa-solid fa-circle-exclamation"></i>
                 </div>
             </a>
 
-            <!-- --- SEGUNDA FILEIRA (AÇÕES / GERENCIAMENTO) --- -->
-
-            <!-- Card 5: Gerenciar Leitores -->
-            <a href="gerenciar_leitores.php" class="card">
+            <!-- Card 5: GERENCIAR LEITORES -->
+            <a href="../pagina_gerenciar_leitores7/gerenciar_leitores.php" class="card">
                 <div class="badge-card">GERENCIAR LEITORES</div>
                 <div class="icone-box">
                     <i class="fa-solid fa-user"></i>
                 </div>
             </a>
 
-            <!-- Card 6: Catálogo de Livros -->
-            <a href="livros.php" class="card">
+            <!-- Card 6: CATÁLOGO DE LIVROS -->
+            <a href="../pagina_catalogo8/catalogo.php" class="card">
                 <div class="badge-card">CATÁLOGO DE LIVROS</div>
                 <div class="icone-box">
                     <i class="fa-solid fa-book-open"></i>
                 </div>
             </a>
 
-            <!-- Card 7: Novo Empréstimo -->
-            <a href="novo_emprestimo.php" class="card">
+            <!-- Card 7: NOVO EMPRÉSTIMO -->
+            <a href="../pagina_novo_emprestimo9/novo_emprestimo.php" class="card">
                 <div class="badge-card">NOVO EMPRÉSTIMO</div>
                 <div class="icone-box">
                     <i class="fa-solid fa-handshake"></i>
@@ -110,7 +105,7 @@ if (!isset($_SESSION['usuario_logado'])) {
             </a>
 
             <!-- Card 8: Registrar Devolução -->
-            <a href="devolucoes.php" class="card">
+            <a href="../pagina_registrar_devolucao10/registrar_devolucao.php" class="card">
                 <div class="badge-card">REGISTRAR DEVOLUÇÃO</div>
                 <div class="icone-box">
                     <i class="fa-solid fa-arrows-rotate"></i>

@@ -1,0 +1,269 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333333;
+}
+
+/* Header Empréstimo */
+.header-emprestimo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.header-esquerda {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-voltar {
+    background-color: #8d5b55;
+    color: #ffffff;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.btn-voltar:hover {
+    background-color: #754843;
+}
+
+.header-esquerda h2 {
+    color: #8d5b55;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.header-direita {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.escola-badge {
+    background-color: #eef3f0;
+    color: #8d5b55;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.avatar {
+    background-color: #ffffff;
+    color: #8d5b55;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    text-decoration: none; /* Remove o sublinhado do link */
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.avatar:hover {
+    background-color: #e8dad7;
+    transform: scale(1.05);
+}
+
+.linha-divisoria {
+    border: none;
+    border-bottom: 1px solid #e2e8f0;
+    margin-top: 5px;
+}
+
+/* Conteúdo Principal */
+.container-conteudo {
+    max-width: 950px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Card Principal do Formulário */
+.card-formulario {
+    background-color: #ffffff;
+    border-radius: 18px;
+    padding: 35px 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f0f0f0;
+}
+
+.form-cabecalho {
+    margin-bottom: 25px;
+}
+
+.form-cabecalho h3 {
+    font-size: 1.35rem;
+    color: #222222;
+    margin-bottom: 6px;
+}
+
+.form-cabecalho p {
+    font-size: 0.88rem;
+    color: #666666;
+}
+
+/* Grelha de Duas Colunas */
+.grid-form-emprestimo {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 35px;
+}
+
+.coluna-campos {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.campo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo-form label {
+    font-size: 0.88rem;
+    font-weight: bold;
+    color: #333333;
+}
+
+.campo-form input,
+.campo-form select,
+.campo-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    outline: none;
+    background-color: #ffffff;
+    color: #333333;
+    transition: border-color 0.2s;
+}
+
+.campo-form input:focus,
+.campo-form select:focus,
+.campo-form textarea:focus {
+    border-color: #8d5b55;
+}
+
+.campo-form textarea {
+    resize: none;
+}
+
+.linha-datas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Coluna de Verificações de Segurança */
+.coluna-seguranca {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.titulo-seguranca {
+    font-size: 0.88rem;
+    font-weight: bold;
+    color: #333333;
+}
+
+.boxes-upload {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.upload-box {
+    background-color: #fcf8f8;
+    border: 1px dashed #e2d3d1;
+    border-radius: 14px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.upload-box:hover {
+    background-color: #f8efee;
+}
+
+.icon-plus {
+    color: #8d5b55;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.upload-box strong {
+    font-size: 0.78rem;
+    color: #333333;
+    margin-bottom: 2px;
+}
+
+.btn-text-add {
+    font-size: 0.75rem;
+    color: #8d5b55;
+}
+
+/* Botões do Rodapé */
+.botoes-form {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 10px;
+}
+
+.btn-cancelar {
+    background-color: #f1f5f9;
+    color: #475569;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.88rem;
+    display: flex;
+    align-items: center;
+}
+
+.btn-salvar {
+    background-color: #8d5b55;
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-salvar:hover {
+    background-color: #754843;
+}
