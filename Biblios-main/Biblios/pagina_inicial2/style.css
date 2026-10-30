@@ -1,0 +1,151 @@
+/* Configurações Básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fixa o fundo e remove rolagem da página */
+html, body {
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden !important;
+    background-color: #f8f9fa;
+    color: #333333;
+}
+
+/* 1. Barra Superior */
+.topo-nav {
+    background-color: #8d5b55;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 50px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.menu-icon {
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.escola-badge {
+    background-color: #ffffff;
+    color: #8d5b55;
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.avatar {
+    background-color: #ffffff;
+    color: #8d5b55;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    text-decoration: none; /* Remove o sublinhado do link */
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.avatar:hover {
+    background-color: #e8dad7;
+    transform: scale(1.05);
+}
+
+/* 2. Conteúdo da Página (Expandido para monitores Desktop) */
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 30px auto 0;
+    padding: 0 10px;
+}
+
+.boas-vindas h2 {
+    font-size: 2.2rem;
+    color: #222222;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.boas-vindas p {
+    color: #777777;
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+}
+
+/* 3. Grade dos Botões Proporcional ao Figma */
+.grid-dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background-color: #8d5b55;
+    border-radius: 22px;
+    padding: 20px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 215px; /* Altura ajustada para preencher a tela */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.badge-card {
+    background-color: #ffffff;
+    color: #8d5b55;
+    font-weight: bold;
+    font-size: 0.82rem;
+    padding: 8px 14px;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+    letter-spacing: 0.5px;
+}
+
+/* Caixinha Clara do Ícone Interno */
+.icone-box {
+    background-color: #e5d7d5;
+    width: 110px;
+    height: 110px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+/* Ícone */
+.icone-box i {
+    font-size: 2.8rem;
+    color: #8d5b55;
+}

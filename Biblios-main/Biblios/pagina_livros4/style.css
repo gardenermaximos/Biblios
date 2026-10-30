@@ -1,0 +1,263 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333333;
+}
+
+/* Header Livros Cadastrados */
+.header-livros {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.header-esquerda {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-voltar {
+    background-color: #8d5b55;
+    color: #ffffff;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.btn-voltar:hover {
+    background-color: #754843;
+}
+
+.header-esquerda h2 {
+    color: #8d5b55;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.header-direita {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.escola-badge {
+    background-color: #eef3f0;
+    color: #8d5b55;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.avatar {
+    background-color: #ffffff;
+    color: #8d5b55;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    text-decoration: none; /* Remove o sublinhado do link */
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.avatar:hover {
+    background-color: #e8dad7;
+    transform: scale(1.05);
+}
+
+.linha-divisoria {
+    border: none;
+    border-bottom: 1px solid #e2e8f0;
+    margin-top: 5px;
+}
+
+/* Conteúdo Principal */
+.container-conteudo {
+    max-width: 1100px;
+    margin: 25px auto;
+    padding: 0 20px;
+}
+
+/* Barra de Busca e Filtros */
+.barra-ferramentas {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.campo-busca {
+    flex: 1;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #888888;
+}
+
+.campo-busca input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 0.95rem;
+    color: #333333;
+}
+
+.btn-filtros {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 10px 22px;
+    font-weight: bold;
+    color: #2e5a44;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+/* Lista de Cartões de Livros */
+.lista-livros {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.cartao-livro {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f0f0f0;
+}
+
+.livro-info {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Quadrado/Thumbnail da Capa */
+.capa-box {
+    width: 46px;
+    height: 58px;
+    border-radius: 8px;
+    background-color: #8d5b55;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.livro-detalhes {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.livro-detalhes strong {
+    font-size: 1.05rem;
+    color: #222222;
+}
+
+.livro-detalhes .autor {
+    font-size: 0.88rem;
+    color: #555555;
+}
+
+.livro-detalhes .isbn {
+    font-size: 0.78rem;
+    color: #999999;
+}
+
+.livro-status {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Badges de Gênero */
+.badge-genero {
+    background-color: #f1f5f9;
+    color: #475569;
+    padding: 6px 16px;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Badges de Disponibilidade */
+.badge-status {
+    padding: 6px 16px;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.badge-status.disponivel {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.badge-status.emprestado {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.menu-opcoes {
+    color: #888888;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-left: 10px;
+}
+
+/* Paginação */
+.paginacao {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 35px;
+}
+
+.btn-pag {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #555555;
+    cursor: pointer;
+}
+
+.pag-ativo {
+    background-color: #8d5b55;
+    color: #ffffff;
+    border-color: #8d5b55;
+}

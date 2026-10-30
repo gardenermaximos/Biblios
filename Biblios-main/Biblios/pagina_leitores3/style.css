@@ -1,0 +1,302 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333333;
+}
+
+/* Header Leitores */
+.header-leitores {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.header-esquerda {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-voltar {
+    background-color: #8d5b55;
+    color: #ffffff;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.btn-voltar:hover {
+    background-color: #754843;
+}
+
+.header-esquerda h2 {
+    color: #8d5b55;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.header-direita {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Botão Adicionar como Link <a> */
+.btn-adicionar {
+    background-color: #8d5b55;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.btn-adicionar:hover {
+    background-color: #754843;
+}
+
+.escola-badge {
+    background-color: #eef3f0;
+    color: #8d5b55;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.avatar {
+    background-color: #ffffff;
+    color: #8d5b55;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    text-decoration: none; /* Remove o sublinhado do link */
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.avatar:hover {
+    background-color: #e8dad7;
+    transform: scale(1.05);
+}
+
+/* Abas LISTA e CADASTRO estilizadas como Links */
+.container-abas {
+    padding: 0 40px;
+    display: flex;
+    gap: 10px;
+}
+
+.aba-btn {
+    border: none;
+    padding: 8px 28px;
+    border-radius: 14px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    cursor: pointer;
+    background-color: #e8dad7;
+    color: #8d5b55;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.aba-ativa {
+    background-color: #8d5b55;
+    color: #ffffff;
+}
+
+.linha-divisoria {
+    border: none;
+    border-bottom: 1px solid #e2e8f0;
+    margin-top: 10px;
+}
+
+/* Conteúdo Principal */
+.container-conteudo {
+    max-width: 1100px;
+    margin: 25px auto;
+    padding: 0 20px;
+}
+
+/* Barra de Busca e Filtros */
+.barra-ferramentas {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.campo-busca {
+    flex: 1;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #888888;
+}
+
+.campo-busca input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 0.95rem;
+    color: #333333;
+}
+
+.btn-filtros {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #2e5a44;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Lista de Cartões dos Leitores */
+.lista-leitores {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cartao-leitor {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 14px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f0f0f0;
+}
+
+.leitor-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar-foto {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #eef3f0;
+    color: #2e5a44;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.leitor-detalhes {
+    display: flex;
+    flex-direction: column;
+}
+
+.leitor-detalhes strong {
+    font-size: 1rem;
+    color: #222222;
+}
+
+.leitor-detalhes span {
+    font-size: 0.85rem;
+    color: #777777;
+}
+
+.leitor-status {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.badge-tipo {
+    padding: 4px 14px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.badge-aluno {
+    background-color: #e0e7ff;
+    color: #4338ca;
+}
+
+.badge-professor {
+    background-color: #fef3c7;
+    color: #b45309;
+}
+
+.status-indicador {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #444444;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ponto-verde {
+    color: #10b981;
+    font-size: 0.5rem;
+}
+
+.menu-opcoes {
+    color: #888888;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* Paginação */
+.paginacao {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.btn-pag {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #555555;
+    cursor: pointer;
+}
+
+.pag-ativo {
+    background-color: #8d5b55;
+    color: #ffffff;
+    border-color: #8d5b55;
+}
