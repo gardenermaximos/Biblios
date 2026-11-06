@@ -1,0 +1,314 @@
+/* Reset Básico e Escala Tipográfica Acessível */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    font-size: 18px; /* Base de fonte ampliada para acessibilidade */
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #222222;
+    line-height: 1.5;
+}
+
+/* Header Gerenciar Leitores */
+.header-gerenciar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 45px;
+}
+
+.header-esquerda {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.btn-voltar {
+    background-color: #8d5b55;
+    color: #ffffff;
+    width: 44px; /* Área de toque expandida */
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-voltar:hover {
+    background-color: #754843;
+    transform: scale(1.05);
+}
+
+.header-esquerda h2 {
+    color: #8d5b55;
+    font-size: 1.6rem; /* Aumentado de 1.4rem */
+    font-weight: bold;
+}
+
+.header-direita {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.escola-badge {
+    background-color: #eef3f0;
+    color: #8d5b55;
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-size: 1rem; /* Aumentado de 0.85rem */
+    font-weight: bold;
+}
+
+.avatar {
+    background-color: #ffffff;
+    color: #8d5b55;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.avatar:hover {
+    background-color: #e8dad7;
+    transform: scale(1.05);
+}
+
+/* Abas LISTA e CADASTRO */
+.container-abas {
+    padding: 0 45px;
+    display: flex;
+    gap: 12px;
+}
+
+.aba-btn {
+    border: none;
+    padding: 12px 30px;
+    border-radius: 14px;
+    font-weight: bold;
+    font-size: 1.05rem; /* Aumentado de 0.85rem */
+    cursor: pointer;
+    background-color: #e8dad7;
+    color: #8d5b55;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+
+.aba-ativa {
+    background-color: #8d5b55;
+    color: #ffffff;
+}
+
+.linha-divisoria {
+    border: none;
+    border-bottom: 1.5px solid #e2e8f0;
+    margin-top: 12px;
+}
+
+/* Conteúdo Principal */
+.container-conteudo {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 25px;
+}
+
+/* Card Principal do Formulário */
+.card-formulario {
+    background-color: #ffffff;
+    border-radius: 18px;
+    padding: 38px 42px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    border: 1.5px solid #e5e7eb;
+}
+
+.form-cabecalho {
+    margin-bottom: 28px;
+}
+
+.form-cabecalho h3 {
+    font-size: 1.55rem; /* Aumentado de 1.35rem */
+    color: #111111;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.form-cabecalho p {
+    font-size: 1.1rem; /* Aumentado de 0.88rem */
+    color: #555555;
+}
+
+/* Estrutura das Linhas do Formulário */
+.form-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.linha-form {
+    display: flex;
+    gap: 24px;
+}
+
+.campo-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo-form label {
+    font-size: 1.1rem; /* Aumentado de 0.88rem */
+    font-weight: 700;
+    color: #222222;
+}
+
+.campo-form input,
+.campo-form select {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1.5px solid #cccccc;
+    border-radius: 12px;
+    font-size: 1.1rem; /* Aumentado de 0.92rem */
+    outline: none;
+    background-color: #ffffff;
+    color: #111111;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo-form input:focus,
+.campo-form select:focus {
+    border-color: #8d5b55;
+    box-shadow: 0 0 0 3px rgba(141, 91, 85, 0.15);
+}
+
+/* Bloco de Status Inicial */
+.campo-form-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+}
+
+.status-texto strong {
+    font-size: 1.1rem;
+    color: #111111;
+}
+
+.status-texto p {
+    font-size: 0.95rem;
+    color: #555555;
+    margin-top: 2px;
+}
+
+/* Toggle Switch (Ativo/Inativo com tamanho ampliado) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 32px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .3s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .3s;
+}
+
+input:checked + .slider {
+    background-color: #8d5b55;
+}
+
+input:checked + .slider:before {
+    transform: translateX(28px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Botões do Rodapé */
+.botoes-form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    margin-top: 15px;
+    padding-top: 22px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.btn-cancelar {
+    background-color: #f1f5f9;
+    color: #475569;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.btn-cancelar:hover {
+    background-color: #e2e8f0;
+}
+
+.btn-salvar {
+    background-color: #8d5b55;
+    color: #ffffff;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-salvar:hover {
+    background-color: #754843;
+    transform: translateY(-1px);
+}
