@@ -1,0 +1,432 @@
+/* Configurações Básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Define escala de fonte base ampliada para legibilidade de idosos */
+html {
+    font-size: 18px;
+}
+
+/* Fixa o fundo e mantêm o ajuste sem rolagem vertical */
+html, body {
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden !important;
+    background-color: #f8f9fa;
+    color: #222222;
+}
+
+/* 1. Barra Superior (Proporções e Fontes Ampliadas) */
+.topo-nav {
+    background-color: #8d5b55;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 45px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+    font-size: 1.35rem; /* Aumentado */
+}
+
+.menu-icon {
+    font-size: 1.45rem;
+    cursor: pointer;
+}
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.escola-badge {
+    background-color: #ffffff;
+    color: #8d5b55;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-size: 1rem; /* Aumentado */
+    font-weight: bold;
+}
+
+.avatar {
+    background-color: #ffffff;
+    color: #8d5b55;
+    width: 44px; /* Área de toque aumentada */
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.avatar:hover {
+    background-color: #e8dad7;
+    transform: scale(1.05);
+}
+
+/* 2. Conteúdo da Página */
+.container {
+    width: 92%;
+    max-width: 1450px;
+    margin: 25px auto 0;
+    padding: 0 10px;
+}
+
+.boas-vindas h2 {
+    font-size: 2.2rem;
+    color: #111111;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.boas-vindas p {
+    color: #555555;
+    font-size: 1.15rem; /* Aumentado */
+    margin-bottom: 25px;
+}
+
+/* 3. Grade dos Cartões com Texto dos Badges Expandidos */
+.grid-dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background-color: #8d5b55;
+    border-radius: 22px;
+    padding: 16px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 225px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Texto de cada ação/indicador - Bastante ampliado e nítido */
+.badge-card {
+    background-color: #ffffff;
+    color: #8d5b55;
+    font-weight: 800;
+    font-size: 1.02rem; /* Subiu de 0.82rem para facilidade de leitura */
+    line-height: 1.25;
+    padding: 10px 14px;
+    border-radius: 16px;
+    text-align: center;
+    width: 100%;
+    letter-spacing: 0.3px;
+}
+
+/* Caixinha Clara do Ícone Interno */
+.icone-box {
+    background-color: #e5d7d5;
+    width: 105px;
+    height: 105px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+/* Ícone */
+.icone-box i {
+    font-size: 3rem;
+    color: #8d5b55;
+}
+
+/* =========================================================
+   TELA ESTÁTICA (SEM ROLAGEM) E RESPONSIVIDADE DO DASHBOARD
+   ========================================================= */
+html, body {
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden !important;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.topo-nav {
+    flex-shrink: 0;
+}
+
+.container {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 18px auto;
+}
+
+.boas-vindas {
+    flex-shrink: 0;
+}
+
+.grid-dashboard {
+    flex: 1;
+    min-height: 0;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.card {
+    height: 100%;
+    max-height: 235px;
+    min-height: 0;
+}
+
+/* Ajuste para notebooks com tela mais baixa (ex: 1366x768) */
+@media (min-width: 901px) and (max-height: 760px) {
+    .topo-nav {
+        padding: 12px 35px;
+    }
+
+    .container {
+        margin: 12px auto;
+    }
+
+    .boas-vindas h2 {
+        font-size: 1.85rem;
+    }
+
+    .boas-vindas p {
+        margin-bottom: 14px;
+    }
+
+    .grid-dashboard {
+        gap: 16px;
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    .icone-box {
+        width: 82px;
+        height: 82px;
+    }
+
+    .icone-box i {
+        font-size: 2.4rem;
+    }
+}
+
+/* Tablets e Celulares (2 colunas x 4 linhas ocupando 100% da tela sem rolagem) */
+@media (max-width: 900px) {
+    html {
+        font-size: 17px; /* Mantém escala ampliada para fácil leitura */
+    }
+
+    .topo-nav {
+        padding: 10px 16px;
+    }
+
+    .logo-area {
+        font-size: 1.15rem;
+    }
+
+    .user-area {
+        gap: 10px;
+    }
+
+    .escola-badge {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
+    .avatar {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+
+    .container {
+        width: 94%;
+        margin: 10px auto 12px;
+        padding: 0;
+    }
+
+    .boas-vindas h2 {
+        font-size: 1.35rem;
+        margin-bottom: 2px;
+    }
+
+    .boas-vindas p {
+        font-size: 0.92rem;
+        margin-bottom: 10px;
+    }
+
+    .grid-dashboard {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    .card {
+        max-height: none;
+        padding: 10px;
+        border-radius: 16px;
+        justify-content: space-evenly;
+    }
+
+    .card:hover {
+        transform: none;
+    }
+
+    .badge-card {
+        font-size: 0.84rem;
+        line-height: 1.2;
+        padding: 6px 8px;
+        border-radius: 11px;
+    }
+
+    .icone-box {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+        margin-top: 2px;
+    }
+
+    .icone-box i {
+        font-size: 1.65rem;
+    }
+}
+
+/* Celulares com tela mais curta (garante zero corte vertical) */
+@media (max-width: 900px) and (max-height: 700px) {
+    .boas-vindas p {
+        display: none; /* Oculta apenas o subtítulo redundante para dar espaço aos botões */
+    }
+
+    .boas-vindas h2 {
+        margin-bottom: 8px;
+        font-size: 1.25rem;
+    }
+
+    .card {
+        padding: 7px 8px;
+    }
+
+    .badge-card {
+        font-size: 0.8rem;
+        padding: 5px 6px;
+    }
+
+    .icone-box {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+    }
+
+    .icone-box i {
+        font-size: 1.35rem;
+    }
+}
+
+/* =========================================================
+   AJUSTE APENAS PARA CELULAR (MANTÉM PC 100% INTACTO)
+   ========================================================= */
+@media (max-width: 768px) {
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .header-leitores {
+        padding: 16px 18px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .header-esquerda h2 {
+        font-size: 1.25rem;
+    }
+
+    .escola-badge {
+        padding: 7px 14px;
+        font-size: 0.88rem;
+    }
+
+    .container-abas {
+        padding: 0 18px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .aba-btn {
+        padding: 10px 16px;
+        font-size: 0.95rem;
+    }
+
+    .container-conteudo {
+        margin: 20px auto;
+        padding: 0 18px;
+    }
+
+    .barra-ferramentas {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .campo-busca {
+        min-width: 100%;
+        padding: 12px 16px;
+    }
+
+    .btn-filtros {
+        padding: 11px 20px;
+    }
+
+    .cartao-leitor {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 16px 18px;
+    }
+
+    .leitor-info {
+        width: 100%;
+    }
+
+    .leitor-detalhes span {
+        word-break: break-word;
+    }
+
+    .leitor-status {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding-top: 10px;
+        border-top: 1px solid #f0f0f0;
+    }
+
+    .acoes-leitor {
+        margin-left: auto !important;
+        gap: 18px !important;
+    }
+}

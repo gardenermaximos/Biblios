@@ -1,0 +1,371 @@
+/* Reset Básico e Escala Tipográfica Acessível */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    font-size: 18px; /* Base de fonte ampliada */
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #222222;
+    line-height: 1.5;
+}
+
+/* Header Livros Cadastrados */
+.header-livros {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 45px;
+}
+
+.header-esquerda {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.btn-voltar {
+    background-color: #8d5b55;
+    color: #ffffff;
+    width: 44px; /* Área de clique expandida */
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-voltar:hover {
+    background-color: #754843;
+    transform: scale(1.05);
+}
+
+.header-esquerda h2 {
+    color: #8d5b55;
+    font-size: 1.6rem; /* Aumentado de 1.4rem */
+    font-weight: bold;
+}
+
+.header-direita {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.escola-badge {
+    background-color: #eef3f0;
+    color: #8d5b55;
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-size: 1rem; /* Aumentado de 0.85rem */
+    font-weight: bold;
+}
+
+.avatar {
+    background-color: #ffffff;
+    color: #8d5b55;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.avatar:hover {
+    background-color: #e8dad7;
+    transform: scale(1.05);
+}
+
+.linha-divisoria {
+    border: none;
+    border-bottom: 1.5px solid #e2e8f0;
+    margin-top: 10px;
+}
+
+/* Conteúdo Principal */
+.container-conteudo {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 25px;
+}
+
+/* Barra de Busca e Filtros */
+.barra-ferramentas {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.campo-busca {
+    flex: 1;
+    background-color: #ffffff;
+    border: 1.5px solid #cccccc;
+    border-radius: 20px;
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #666666;
+}
+
+.campo-busca i {
+    font-size: 1.2rem;
+}
+
+.campo-busca input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1.1rem; /* Aumentado de 0.95rem */
+    color: #111111;
+}
+
+.btn-filtros {
+    background-color: #ffffff;
+    border: 1.5px solid #cccccc;
+    border-radius: 20px;
+    padding: 14px 26px;
+    font-weight: bold;
+    color: #2e5a44;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.05rem; /* Aumentado de 0.9rem */
+    transition: background-color 0.2s;
+}
+
+.btn-filtros:hover {
+    background-color: #f0f4f2;
+}
+
+/* Lista de Cartões de Livros */
+.lista-livros {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cartao-livro {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 18px 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1.5px solid #e5e7eb;
+}
+
+.livro-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Quadrado/Thumbnail da Capa */
+.capa-box {
+    width: 52px; /* Ampliado para destacar o ícone */
+    height: 66px;
+    border-radius: 10px;
+    background-color: #8d5b55;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+}
+
+.livro-detalhes {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.livro-detalhes strong {
+    font-size: 1.25rem; /* Aumentado de 1.05rem */
+    color: #111111;
+}
+
+.livro-detalhes .autor {
+    font-size: 1.05rem; /* Aumentado de 0.88rem */
+    color: #555555;
+}
+
+.livro-detalhes .isbn {
+    font-size: 0.95rem; /* Aumentado de 0.78rem */
+    color: #777777;
+}
+
+.livro-status {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Badges de Gênero */
+.badge-genero {
+    background-color: #f1f5f9;
+    color: #475569;
+    padding: 8px 18px;
+    border-radius: 14px;
+    font-size: 0.95rem; /* Aumentado de 0.8rem */
+    font-weight: bold;
+}
+
+/* Badges de Disponibilidade */
+.badge-status {
+    padding: 8px 18px;
+    border-radius: 14px;
+    font-size: 0.95rem; /* Aumentado de 0.8rem */
+    font-weight: bold;
+}
+
+.badge-status.disponivel {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.badge-status.emprestado {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.acoes-livro a {
+    transition: transform 0.15s;
+    display: inline-block;
+}
+
+.acoes-livro a:hover {
+    transform: scale(1.15);
+}
+
+.menu-opcoes {
+    color: #888888;
+    cursor: pointer;
+    font-size: 1.25rem;
+    margin-left: 10px;
+}
+
+/* Paginação */
+.paginacao {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 35px;
+}
+
+.btn-pag {
+    background-color: #ffffff;
+    border: 1.5px solid #cccccc;
+    width: 42px; /* Área de toque expandida */
+    height: 42px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.05rem;
+    color: #444444;
+    cursor: pointer;
+}
+
+.pag-ativo {
+    background-color: #8d5b55;
+    color: #ffffff;
+    border-color: #8d5b55;
+}
+
+/* =========================================================
+   AJUSTE APENAS PARA CELULAR (MANTÉM PC 100% INTACTO)
+   ========================================================= */
+@media (max-width: 768px) {
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .header-livros {
+        padding: 16px 18px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .header-esquerda {
+        gap: 12px;
+    }
+
+    .header-esquerda h2 {
+        font-size: 1.2rem;
+        line-height: 1.25;
+    }
+
+    .escola-badge {
+        padding: 7px 14px;
+        font-size: 0.88rem;
+    }
+
+    .container-conteudo {
+        margin: 20px auto;
+        padding: 0 18px;
+    }
+
+    .barra-ferramentas {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .campo-busca {
+        min-width: 100%;
+        padding: 12px 16px;
+    }
+
+    .btn-filtros {
+        padding: 11px 20px;
+    }
+
+    .cartao-livro {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 16px 18px;
+    }
+
+    .livro-info {
+        width: 100%;
+        gap: 14px;
+    }
+
+    .capa-box {
+        flex-shrink: 0; /* Impede que títulos longos esmaguem o ícone do livro */
+    }
+
+    .livro-detalhes strong,
+    .livro-detalhes .autor {
+        word-break: break-word;
+    }
+
+    .livro-status {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-top: 12px;
+        border-top: 1px solid #f0f0f0;
+    }
+
+    .acoes-livro {
+        margin-left: auto !important;
+        gap: 18px !important;
+    }
+}
