@@ -5,7 +5,7 @@ BibliOS is an academic web application developed for managing a school library. 
 ## Technologies Used
 
 * **Backend:** PHP (with PDO for database operations and session-based authentication)
-* **Database:** MySQL
+* **Database:** MySQL (managed via phpMyAdmin)
 * **Frontend:** HTML5 and responsive CSS3
 * **Icons:** Font Awesome
 
